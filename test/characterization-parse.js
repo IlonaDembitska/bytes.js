@@ -40,6 +40,12 @@ describe('characterization: parse — поточна поведінка', functi
   // ПОВЕДІНКА: рядок з одиницею множиться на 1024^4. Вхід: Readme.md#L8. Значення — з прогону blind 2.
   it('parse("1TB") повертає 1099511627776', function () {
     assert.strictEqual(bytes.parse('1TB'), 1099511627776);
+    // мутант index.js:37 без "^": сміття ПЕРЕД числом дає null (прогін 12.11)
+    assert.strictEqual(bytes.parse("x1KB"), null);
+    // мутант index.js:37 без "$": сміття ПІСЛЯ одиниці — regexp не збігся, parseInt дає 1 (прогін 12.11)
+    assert.strictEqual(bytes.parse("1KBx"), 1);
+    // мутант index.js:37 "\d+" -> "\d": дві цифри перед одиницею (прогін 12.11)
+    assert.strictEqual(bytes.parse("10KB"), 10240);
   });
 
   // ПОВЕДІНКА: шістнадцятковий запис не розбирається як hex — parseInt бере лише "0".
