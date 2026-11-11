@@ -1,0 +1,6 @@
+test/byte-format.js → index.js
+test/byte-format.js → assert
+test/byte-parse.js → index.js
+test/byte-parse.js → assert
+test/bytes.js → index.js
+test/bytes.js → assert

@@ -1,0 +1,11 @@
+
+/Users/ilonadembitska/lab4/bytes.js/index.js
+   54:1   warning  Function 'bytes' has a complexity of 3. Maximum allowed is 1      complexity
+   84:1   warning  Function 'format' has too many lines (45). Maximum allowed is 20  max-lines-per-function
+   84:1   warning  Function 'format' has a complexity of 20. Maximum allowed is 1    complexity
+  120:30  warning  Function has a complexity of 2. Maximum allowed is 1              complexity
+  141:1   warning  Function 'parse' has too many lines (30). Maximum allowed is 20   max-lines-per-function
+  141:1   warning  Function 'parse' has a complexity of 6. Maximum allowed is 1      complexity
+
+✖ 6 problems (0 errors, 6 warnings)
+
