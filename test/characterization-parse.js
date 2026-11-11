@@ -13,13 +13,13 @@ describe('characterization: parse — поточна поведінка', functi
   // ПОВЕДІНКА: нескінченне число проходить крізь parse без змін.
   // ЦЕ СХОЖЕ НА БАГ і зафіксовано навмисне: format(Infinity) дає null, README обіцяє number|null.
   // Саме це твердження свідомо оновлює крок 02. Вхід: test/byte-format.js (Infinity).
-  it('parse(Infinity) повертає null (оновлено навмисне, крок 02)', function () {
-    assert.strictEqual(bytes.parse(Infinity), null);
+  it('parse(Infinity) повертає Infinity (зафіксований баг)', function () {
+    assert.strictEqual(bytes.parse(Infinity), Infinity);
   });
 
   // ПОВЕДІНКА: те саме для -Infinity. ЧОМУ: index.js#L142 перевіряє лише isNaN.
-  it('parse(-Infinity) повертає null (оновлено навмисне, крок 02)', function () {
-    assert.strictEqual(bytes.parse(-Infinity), null);
+  it('parse(-Infinity) повертає -Infinity', function () {
+    assert.strictEqual(bytes.parse(-Infinity), -Infinity);
   });
 
   // ПОВЕДІНКА: NaN — єдине число, яке parse відкидає. Вхід: test/byte-parse.js#L12.

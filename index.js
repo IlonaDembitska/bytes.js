@@ -139,7 +139,7 @@ function format(value, options) {
  */
 
 function parse(val) {
-  if (typeof val === 'number' && Number.isFinite(val)) {
+  if (typeof val === 'number' && !isNaN(val)) {
     return val;
   }
 
